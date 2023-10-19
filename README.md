@@ -10,19 +10,26 @@
  I completed the task in 2 versions: main and bonus. Accordingly, these 2 projects are located in different folders: http_poll_ext and http_poll_ext_2/.
 
 I created an http server based on poll multiplexing to poll multiple clients. This technology removes the limitation of 1023 client connections that was in the selected multiplexing technology.
+
 Applications are created in QT Creator.
 
 Also, the application (an example is given for the basic version) can be compiled without using QT Creator using commands from the terminal:
 
 DEBUG:
+
 g++ -c -pipe -g -std=gnu++1z -Wall -W -fPIC -DQT_QML_DEBUG -I../http_poll -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -o http_poll_ext_server.o ../http_poll/http_poll_ext_server.cpp
+
 g++ -c -pipe -g -std=gnu++1z -Wall -W -fPIC -DQT_QML_DEBUG -I../http_poll -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -o main.o ../http_poll/main.cpp
+
 g++ -o http_poll_ext http_poll_ext_server.o main.o -pthread
 
 AND
 RELEASE:
+
 g++ -c -pipe -O2 -std=gnu++1z -Wall -W -fPIC -I../http_poll -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -o http_poll_ext_server.o ../http_poll/http_poll_ext_server.cpp
+
 g++ -c -pipe -O2 -std=gnu++1z -Wall -W -fPIC -I../http_poll -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -o main.o ../http_poll/main.cpp
+
 g++ -Wl,-O1 -o http_poll_ext http_poll_ext_server.o main.o -pthread
 
 On this server I used multithreading to process client requests.
