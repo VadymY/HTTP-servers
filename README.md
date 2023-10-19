@@ -9,7 +9,7 @@
 
  I completed the task in 2 versions: main and bonus. Accordingly, these 2 projects are located in different folders: http_poll_ext and http_poll_ext_2/.
 
-I created an http server based on poll multiplexing to poll multiple clients. This technology removes the limitation of 1023 client connections that was in the selected multiplexing technology.
+I created an http server based on poll multiplexing to poll multiple clients. This technology removes the limitation of 1023 client connections that were in the selected multiplexing technology. The server supports the technology "keep-alive" with clients.
 
 Applications are created in QT Creator.
 
@@ -32,7 +32,7 @@ g++ -c -pipe -O2 -std=gnu++1z -Wall -W -fPIC -I../http_poll -I. -I/usr/lib/x86_6
 
 g++ -Wl,-O1 -o http_poll_ext http_poll_ext_server.o main.o -pthread
 
-On this server I used multithreading to process client requests.
+On this server, I used multithreading to process client requests.
 
     When the server starts, a function is called that sets the limit on the number of descriptors to 2000. The server is designed for the same number of clients.
     
