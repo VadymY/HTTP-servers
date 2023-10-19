@@ -11,7 +11,9 @@
 
 I created an http server based on poll multiplexing to poll multiple clients. This technology removes the limitation of 1023 client connections that was in the selected multiplexing technology.
 Applications are created in QT Creator.
+
 Also, the application (an example is given for the basic version) can be compiled without using QT Creator using commands from the terminal:
+
 DEBUG:
 g++ -c -pipe -g -std=gnu++1z -Wall -W -fPIC -DQT_QML_DEBUG -I../http_poll -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -o http_poll_ext_server.o ../http_poll/http_poll_ext_server.cpp
 g++ -c -pipe -g -std=gnu++1z -Wall -W -fPIC -DQT_QML_DEBUG -I../http_poll -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -o main.o ../http_poll/main.cpp
@@ -26,7 +28,9 @@ g++ -Wl,-O1 -o http_poll_ext http_poll_ext_server.o main.o -pthread
 On this server I used multithreading to process client requests.
 
     When the server starts, a function is called that sets the limit on the number of descriptors to 2000. The server is designed for the same number of clients.
+    
     Next, I do the standard server socket initialization and also set the address and port the server is running on to reusable mode so that when the server is shut down, 
+    
     the new server can run on the same handle.
     
     The server supports GET, POST, DELETE requests. Different processing and response logic is implemented for different options (main and bonus).
