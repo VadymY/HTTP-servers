@@ -9,7 +9,7 @@
 
  I completed the task in 2 versions: main and bonus. Accordingly, these 2 projects are located in different folders: http_poll_ext and http_poll_ext_2/.
 
-I created an http server based on poll multiplexing to poll multiple clients. This technology removes the limitation of 1023 client connections that were in the previous multiplexing technology SELECT. The server supports the technology "keep-alive" with clients.
+I created an http server based on POLL multiplexing to poll multiple clients. This technology removes the limitation of 1023 client connections that were in the previous multiplexing technology SELECT. The server supports the technology "keep-alive" with clients.
 
 Applications were created in QT Creator.
 
