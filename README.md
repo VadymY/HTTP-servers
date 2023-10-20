@@ -9,9 +9,9 @@
 
  I completed the task in 2 versions: main and bonus. Accordingly, these 2 projects are located in different folders: http_poll_ext and http_poll_ext_2/.
 
-I created an http server based on poll multiplexing to poll multiple clients. This technology removes the limitation of 1023 client connections that were in the selected multiplexing technology. The server supports the technology "keep-alive" with clients.
+I created an http server based on poll multiplexing to poll multiple clients. This technology removes the limitation of 1023 client connections that were in the previous multiplexing technology SELECT. The server supports the technology "keep-alive" with clients.
 
-Applications are created in QT Creator.
+Applications were created in QT Creator.
 
 Also, the application (an example is given for the basic version) can be compiled without using QT Creator using commands from the terminal:
 
@@ -38,6 +38,6 @@ On this server, I used multithreading to process client requests.
     
     Next, I do the standard server socket initialization and also set the address and port the server is running on to reusable mode so that when the server is shut down, 
     
-    the new server can run on the same handle.
+    the new server can run on the same descriptor.
     
     The server supports GET, POST, DELETE requests. Different processing and response logic is implemented for different options (main and bonus).
